@@ -1,0 +1,25 @@
+<div class="container">
+  <div *ngIf="!selectedUser">
+    <div>
+      <h1>
+        Top 5 Github users.
+      </h1>
+    </div>
+    <div>
+      Tap the username for more information:
+    </div>
+    <div class="pull-left user-item" *ngFor="let user of userList">
+      <button class="btn btn-primary" (click)="showUser(user)">{{ user.login }}</button>
+    </div>
+  </div>
+  <ng-container *ngIf="selectedUser">
+    <button class="btn btn-primary" (click)="backToList()">< Back</button>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <img src="{{ selectedUser.avatar_url }}" class="img-responsive" />
+        <div>Name: {{ selectedUser.name }}</div>
+        <div>Location: {{ selectedUser.location || 'N/A' }}</div>
+      </li>
+    </ul>
+  </ng-container>
+</div>
