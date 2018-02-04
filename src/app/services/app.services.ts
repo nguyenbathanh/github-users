@@ -5,8 +5,7 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 export class AppServices {
   public readonly baseUrl = 'https://api.github.com';
 
-  constructor(private http: Http) {
-  }
+  constructor(private http: Http) {}
 
   public getAllUsers() {
     return new Promise((resolve, reject) => {

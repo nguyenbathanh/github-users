@@ -9,12 +9,12 @@
       Tap the username for more information:
     </div>
     <div class="pull-left user-item" *ngFor="let user of userList">
-      <button class="btn btn-primary" (click)="showUser(user)">{{ user.login }}</button>
+      <button class="btn btn-primary" [class.disabled]="asyncStatus.loadUser" (click)="showUser(user)">{{ user.login }}</button>
     </div>
   </div>
   <ng-container *ngIf="selectedUser">
     <button class="btn btn-primary" (click)="backToList()">< Back</button>
-    <ul class="list-group">
+    <ul class="list-group user-info">
       <li class="list-group-item">
         <img src="{{ selectedUser.avatar_url }}" class="img-responsive" />
         <div>Name: {{ selectedUser.name }}</div>

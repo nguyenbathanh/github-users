@@ -6,8 +6,7 @@ import {AppServices} from './services/app.services';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
-  public selectedUser: any ;
+  public selectedUser: any = null;
   public userList = [];
   public asyncStatus = {
     loadUserList: false,
